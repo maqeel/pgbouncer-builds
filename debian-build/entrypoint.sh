@@ -1,20 +1,20 @@
 #!/bin/bash
 
-wget https://www.pgbouncer.org/downloads/files/$PGBOUNCER_VERSION/pgbouncer-$PGBOUNCER_VERSION.tar.gz \
-    && tar -xvzf pgbouncer-$PGBOUNCER_VERSION.tar.gz \
-    && rm -rf pgbouncer-$PGBOUNCER_VERSION.tar.gz
+wget https://www.pgbouncer.org/downloads/files/$INPUT_PGBOUNCER_VERSION/pgbouncer-$INPUT_PGBOUNCER_VERSION.tar.gz \
+    && tar -xvzf pgbouncer-$INPUT_PGBOUNCER_VERSION.tar.gz \
+    && rm -rf pgbouncer-$INPUT_PGBOUNCER_VERSION.tar.gz
 
 git clone https://salsa.debian.org/postgresql/pgbouncer.git pgbouncer-debian
 
-cp -rp pgbouncer-debian/debian pgbouncer-$PGBOUNCER_VERSION
+cp -rp pgbouncer-debian/debian pgbouncer-$INPUT_PGBOUNCER_VERSION
 
-sed -i 's/debhelper-compat (= 13)/debhelper/g' pgbouncer-$PGBOUNCER_VERSION/debian/control \
-    && sed -i 's/PATH=$(PGBINDIR):$(PATH)/PATH=$(PGBINDIR):$(PATH) || true/g' pgbouncer-$PGBOUNCER_VERSION/debian/rules
+sed -i 's/debhelper-compat (= 13)/debhelper/g' pgbouncer-$INPUT_PGBOUNCER_VERSION/debian/control \
+    && sed -i 's/PATH=$(PGBINDIR):$(PATH)/PATH=$(PGBINDIR):$(PATH) || true/g' pgbouncer-$INPUT_PGBOUNCER_VERSION/debian/rules
 
-echo 9 > pgbouncer-$PGBOUNCER_VERSION/debian/compat
+echo 9 > pgbouncer-$INPUT_PGBOUNCER_VERSION/debian/compat
 
-cd pgbouncer-$PGBOUNCER_VERSION
+cd pgbouncer-$INPUT_PGBOUNCER_VERSION
 
 debuild -b || true
 
-cp -rp ../pgbouncer*_$PGBOUNCER_VERSION* /mnt/build
+cp -rp ../pgbouncer*_$INPUT_PGBOUNCER_VERSION* /mnt/build
