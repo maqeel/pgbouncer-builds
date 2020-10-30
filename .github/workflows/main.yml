@@ -1,0 +1,11 @@
+name: A workflow to build pgBouncer packages
+on: push
+jobs:
+  build:
+    name: pgBouncer package build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./debian-build
+        with:
+          PGBOUNCER_VERSION: "1.14.0"
