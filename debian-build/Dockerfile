@@ -11,6 +11,6 @@ RUN apt-get update \
     && apt-get install -y wget git devscripts build-essential python3 libevent-dev libpam0g-dev libc-ares-dev libssl-dev pkg-config libpq-dev pandoc postgresql
 
 RUN mkdir /mnt/build
-COPY ./entrypoint.sh ./entrypoint.sh
-
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
