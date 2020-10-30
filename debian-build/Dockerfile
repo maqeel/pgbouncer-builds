@@ -13,4 +13,4 @@ RUN apt-get update \
 RUN mkdir /mnt/build
 COPY ./entrypoint.sh ./entrypoint.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
