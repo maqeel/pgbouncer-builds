@@ -13,3 +13,6 @@ jobs:
         with:
           name: pgbouncer-debian-build
           path: /home/runner/work/pgbouncer-builds/pgbouncer-builds/output
+      - uses: actions/download-artifact@v2
+        with:
+          name: pgbouncer-debian-build
