@@ -17,4 +17,6 @@ cd pgbouncer-$INPUT_PGBOUNCER_VERSION
 
 debuild -b || true
 
-cp -rp ../pgbouncer*_$INPUT_PGBOUNCER_VERSION* /mnt/build
+echo "Current directory=$PWD"
+mkdir -p $PWD/output
+cp -rp ../pgbouncer*_$INPUT_PGBOUNCER_VERSION* $PWD/output
