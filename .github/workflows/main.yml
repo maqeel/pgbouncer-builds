@@ -9,3 +9,7 @@ jobs:
       - uses: ./debian-build
         with:
           PGBOUNCER_VERSION: "1.14.0"
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: /home/runner/work/pgbouncer-builds/pgbouncer-builds/output
