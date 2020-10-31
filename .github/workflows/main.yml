@@ -11,5 +11,5 @@ jobs:
           PGBOUNCER_VERSION: "1.14.0"
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
+          name: pgbouncer-debian-build
           path: /home/runner/work/pgbouncer-builds/pgbouncer-builds/output
