@@ -8,7 +8,7 @@ LABEL vendor="Aqeel" \
 
 
 RUN apt-get update \
-    && apt-get install -y wget git devscripts build-essential postgresql libc-ares2 libevent
+    && apt-get install -y wget git devscripts build-essential postgresql libc-ares-dev libevent-dev
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
