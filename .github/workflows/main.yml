@@ -22,6 +22,7 @@ jobs:
     name: Install pgBouncer
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: ./debian-install
         with:
           PGBOUNCER_VERSION: "1.14.0"
