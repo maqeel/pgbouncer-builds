@@ -2,6 +2,4 @@
 
 cd /github/workspace
 
-ls -lrt
-
-#dpkg -i pgbouncer_$INPUT_PGBOUNCER_VERSION*.deb
+dpkg -i pgbouncer_$INPUT_PGBOUNCER_VERSION*.deb
