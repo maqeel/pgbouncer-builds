@@ -13,16 +13,15 @@ jobs:
         with:
           name: pgbouncer-debian-build
           path: /home/runner/work/pgbouncer-builds/pgbouncer-builds/output
-      - uses: actions/download-artifact@v2
-        with:
-          name: pgbouncer-debian-build 
-          path: ~/build
   install:
     needs: build
     name: Install pgBouncer
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/download-artifact@v2
+        with:
+          name: pgbouncer-debian-build
       - uses: ./debian-install
         with:
           PGBOUNCER_VERSION: "1.14.0"
