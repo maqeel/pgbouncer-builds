@@ -2,7 +2,7 @@ name: A workflow to build pgBouncer packages
 on: push
 jobs:
   build:
-    name: pgBouncer-build
+    name: Build pgBouncer
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -18,7 +18,7 @@ jobs:
           name: pgbouncer-debian-build 
           path: ~/build
   install:
-    needs: pgBouncer-build
+    needs: build
     name: Install pgBouncer
     runs-on: ubuntu-latest
     steps:
