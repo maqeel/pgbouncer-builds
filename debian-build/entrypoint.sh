@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Get source of pgbouncer
 wget https://www.pgbouncer.org/downloads/files/$INPUT_PGBOUNCER_VERSION/pgbouncer-$INPUT_PGBOUNCER_VERSION.tar.gz \
     && tar -xvzf pgbouncer-$INPUT_PGBOUNCER_VERSION.tar.gz \
     && rm -rf pgbouncer-$INPUT_PGBOUNCER_VERSION.tar.gz
